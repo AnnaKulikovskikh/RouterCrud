@@ -1,0 +1,91 @@
+.app {
+  height: 100vh;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 95vw;
+  height: 60px;
+  background-color: aliceblue;
+  border-radius: 1%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.creation {
+  width: 95%;
+  background-color: aliceblue;
+  margin-top: 20px;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.create-exit {
+  border: none;
+  background-color: aliceblue;
+}
+
+.addNote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addArea {
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.addBtn {
+  margin-right: 15px;
+  background-color: rgb(100, 100, 208);
+  color: aliceblue;
+  border: none;
+  border-radius: 5%;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 150px;
+}
+
+link {
+  text-decoration: none;
+}
+
+.note {
+  width: 95%;
+  background-color: aliceblue;
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.status-time {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+}
+
+.text {
+  font-size: 48px;
+}
+
+.note > textarea {
+  width: 95%;
+}
