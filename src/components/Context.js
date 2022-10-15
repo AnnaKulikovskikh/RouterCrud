@@ -11,12 +11,40 @@ function ContextProvider(props) {
             .then(data => setCards(data))
     }
 
-    function add(note) {
-        setCards(prevCards => [...prevCards, note])
+    async function del(id) {
+        const options = {
+            method: "DELETE"
+        }
+        const response = await fetch(`${url}/${id}`, options)
+        if (response.ok) {
+            setCards([])
+            load()
+        } else {
+            alert ("Ошибка HTTP: " + response.status)
+        }
+    }
+
+    async function add(text) {
+        console.log(text)
+        const add = {
+            id: 0,
+            content: text
+        }
+        const options = {
+            method: "POST",
+            body: JSON.stringify(add),
+            headers: {"Content-Type": "application/json"}
+        }
+        let response = await fetch(url, options)
+        if (response.ok) {
+            load()
+        } else {
+            alert ("Ошибка HTTP: " + response.status)
+        }
     }
 
     return (
-        <Context.Provider value={{allCards, add, load}}>
+        <Context.Provider value={{allCards, load, del , add}}>
             {props.children}
         </Context.Provider>
     )

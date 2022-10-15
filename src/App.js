@@ -14,8 +14,6 @@ function App() {
         <Route exact path="/" element={<Header/>}/>
         <Route path="/creation" element={<Creation/>}/>
       </Routes>
-
-      {/* <button onClick={load}>Click</button> */}
     </div>
   )
 }

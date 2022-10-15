@@ -1,24 +1,25 @@
 import { Link } from "react-router-dom"
 import Note from "./Note"
-// import {Context} from "./Context"
-// import { useContext } from "react"
+import {Context} from "./Context"
+import { useContext } from "react"
 
 export default function Header() {
-    //const {allCards} = useContext(Context)
-
-    // const cards = allCards.map(card => {
-    //     <Note key={card.id} content={card.content} created={card.created}/>
-    // })
+    const {allCards, load} = useContext(Context)
+    load()
+    const cards = allCards.map(card => {
+        return (
+            <Note key={card.id} content={card.content} created={card.created} id={card.id}/>
+        )
+    })
 
     return (
         <>
             <header>
                 <div className="header">
-                    <button className="addBtn"><Link to="/creation">Создать пост</Link></button>
+                    <Link to="/creation"><button className="addBtn">Создать пост</button></Link>
                 </div>
             </header>
-            <Note content="12345"/>
-            {/* {cards} */}
+            {cards}
         </>
     )
 }
