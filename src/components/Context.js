@@ -25,7 +25,6 @@ function ContextProvider(props) {
     }
 
     async function add(text) {
-        console.log(text)
         const add = {
             id: 0,
             content: text

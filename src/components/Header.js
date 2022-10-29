@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
 import Note from "./Note"
 import {Context} from "./Context"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 
 export default function Header() {
     const {allCards, load} = useContext(Context)
-    load()
+    useEffect(() => load(), [])
     const cards = allCards.map(card => {
         return (
             <Note key={card.id} content={card.content} created={card.created} id={card.id}/>
